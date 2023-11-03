@@ -5,7 +5,6 @@ function App() {
   return (
     <div>
       <header>
-        <p>Fill out the form:</p>
       </header>
       <body>
         <SuggestionPage/>
