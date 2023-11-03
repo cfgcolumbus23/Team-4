@@ -23,3 +23,8 @@
 .no-newline {
   display: inline-flex;
 }
+
+.chat-box-container {
+  position: absolute;
+  bottom: 0;
+}

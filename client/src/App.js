@@ -1,6 +1,7 @@
 import './App.css';
 import SuggestionPage from './pages/SuggestionPage';
-import Trainings from './pages/Trainings';
+import TrainingPage from './pages/TrainingPage';
+import ChatPage from './pages/ChatPage'
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       </header>
       <body>
         <SuggestionPage/>
-        <Trainings/>
+        <TrainingPage/>
+        <ChatPage/>
       </body>
     </div>
   );
