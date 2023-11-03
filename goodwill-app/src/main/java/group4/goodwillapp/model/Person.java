@@ -1,5 +1,10 @@
 package group4.goodwillapp.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 //create the person super class for code reusability
 public class Person {
     private String name;
