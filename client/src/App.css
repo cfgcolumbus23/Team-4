@@ -6,13 +6,20 @@
 }
 
 .name-email-box {
-  height: 200px;
   justify-content: center;
   align-items: center;
 }
 
 .select-all-apply-menu{
-  height: 500px;
+  padding: 50px;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+}
+
+.left-align {
+  align-items: left;
+}
+
+.no-newline {
+  display: inline-flex;
 }
