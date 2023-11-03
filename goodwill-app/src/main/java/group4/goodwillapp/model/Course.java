@@ -8,9 +8,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Document(collection = "courses")
-@Setter
 @Getter
+@Setter
+@Document(collection = "courses")
 public class Course{
     @Id
     private long courseId;
@@ -21,4 +21,5 @@ public class Course{
     private String courseLength;
     private boolean availabilty; //is the course available to take
     private String courseProvider;
+
 }
