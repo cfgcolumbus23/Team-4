@@ -18,4 +18,15 @@ public class Applicant extends Person {
     private LocalDateTime timeApplied;
     private ArrayList<Course> coursesTaken;
     private long coachId;//id of the current acting coach
+
+    public Applicant(){}
+
+    public Applicant(String name, String email, String phoneNum, int age, String password,
+    long applicantId,LocalDateTime timeApplied, ArrayList<Course> coursesTaken, long coachId){
+        super(name,email,phoneNum,age,password);
+        this.applicantId = applicantId;
+        this.timeApplied = timeApplied;
+        this.coursesTaken = coursesTaken;
+        this.coachId = coachId;
+    }
 }

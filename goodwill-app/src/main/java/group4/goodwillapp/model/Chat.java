@@ -17,5 +17,14 @@ public class Chat {
     private LocalDateTime timeSent;
     private String message;
     private String senderName;
+
+    public Chat(){}
+
+    public Chat(long chatId,LocalDateTime timeSent,String message,String senderName){
+        this.chatId = chatId;
+        this.timeSent = timeSent;
+        this.message = message;
+        this.senderName = senderName;
+    }
     
 }

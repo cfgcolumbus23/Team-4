@@ -15,7 +15,15 @@ public class ChatLog {
     @Id
     private long chatLogId;
     private ArrayList<Chat> chats;
-    private long applicationId;
+    private long applicantId;
     private long coachId;
-    
+
+    public ChatLog(){}
+
+    public ChatLog(long chatLogId, ArrayList<Chat> chats, long applicantId, long coachId){
+        this.chatLogId = chatLogId;
+        this.chats = chats;
+        this.applicantId = applicantId;
+        this.coachId = coachId;
+    }
 }
