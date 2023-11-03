@@ -17,7 +17,7 @@ public class Course{
 
     private String title; 
     private String description; 
-    private LocalDateTime timeApplied;
+    private LocalDateTime dateAdded;
     private String courseLength;
     private boolean availabilty; //is the course available to take
     private String courseProvider;
