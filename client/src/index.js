@@ -9,8 +9,10 @@ import LaunchRouter from "./components/LaunchRouter";
 import SuggestionPage2 from "./pages/SuggestionPage2";
 import ChatPage from "./pages/ChatPage";
 import TrainingPage from "./pages/TrainingPage";
+import * as serviceWorker from "./ServiceWorker";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+serviceWorker.unregister();
 root.render(
   <React.StrictMode>
     <Router>
