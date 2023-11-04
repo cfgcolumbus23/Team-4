@@ -2,9 +2,7 @@ package group4.goodwillapp.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.GetExchange;
 
-import group4.goodwillapp.model.Course;
 import group4.goodwillapp.model.Feedback;
 import group4.goodwillapp.service.FeedbackService;
 

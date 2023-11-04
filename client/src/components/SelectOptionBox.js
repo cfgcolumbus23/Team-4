@@ -8,7 +8,7 @@ import "../App.css";
 function SelectOptionBox() {
 
    useEffect(() => {
-    fetch("/courses/getAllCourses/")
+    fetch("http://localhost:8080/courses/getAllCourses/")
       .then(response => response.json())  //function(response) {return {response.json}}
       .then(data =>  setOptionsData(data))
       .catch((error) => {
@@ -27,7 +27,7 @@ function SelectOptionBox() {
       
 
     return (
-    <div class="select-all-apply-menu">
+    <div class="dropdown-container">
         {/* <MyComponent/> */}
         <Select Options={optionsData}/>
 
