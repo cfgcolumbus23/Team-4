@@ -13,37 +13,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import group4.goodwillapp.model.Course;
-import group4.goodwillapp.service.CourseService;
+import group4.goodwillapp.model.CareerPath;
+import group4.goodwillapp.service.CareerPathService;
 
 @RestController
+@RequestMapping("/careerpath")
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/courses")
-public class CourseController {
-
+public class CareerPathController {
+    
     @Autowired
-    private CourseService courseService;
+    private CareerPathService careerPathService;
 
     @PostMapping("/save")
-    public void saveCourse(@RequestBody Course course) {
-        courseService.saveCourse(course);
+    public void saveCareerPath(@RequestBody CareerPath careerPath) {
+        careerPathService.saveCareerPath(careerPath);
     }
 
-    @GetMapping("/get/{courseId}")
-    public ResponseEntity<Course> getCourseById(@PathVariable Long courseId) {
-        return courseService.getCourseById(courseId)
-                .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
+    @GetMapping("/get/{careerPathId}")
+    public ResponseEntity<CareerPath> getCareerPathById(@PathVariable Long careerPathId) {
+        return careerPathService.getCareerPathById(careerPathId)
+                .map(careerpath -> new ResponseEntity<>(careerpath, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("/getAll")
-    public ResponseEntity<List<Course>> getAllCourses() {
-        try{
-            return new ResponseEntity<List<Course>>(courseService.getAllCourses(), HttpStatus.OK);
-        }catch(Exception e){
+    @GetMapping("/getall")
+    public ResponseEntity<List<CareerPath>> getAllCareerPaths() {
+        try {
+            return new ResponseEntity<>(careerPathService.getAllCareerPaths(), HttpStatus.OK);
+        } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }  
+        }
     }
-
-    
 }
