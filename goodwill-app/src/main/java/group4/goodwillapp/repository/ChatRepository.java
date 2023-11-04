@@ -13,6 +13,6 @@ public interface ChatRepository extends MongoRepository<Chat, Long> {
     //Find Chat
     Optional<Chat> findByChatId(Long chatId);
 
-    Optional<List<Chat>> findByMessageContent(String message);
+    // Optional<List<Chat>> findByMessageContent(String message);
     
 }

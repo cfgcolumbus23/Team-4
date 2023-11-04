@@ -13,6 +13,6 @@ public interface ApplicantRepository extends MongoRepository<Applicant, Long> {
     //Find Applicant
     Optional<Applicant> findByApplicantId(Long applicantId);
 
-    Optional<List<Applicant>> findAllByCoachId(long coachId);
+    // Optional<List<Applicant>> findAllByCoachId(long coachId);
 
 }
