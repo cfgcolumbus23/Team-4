@@ -139,7 +139,7 @@ export const Navbar = () => {
                 navigate("/SuggestionPage");
               }}
             >
-              Submit Rec
+              Feedback
             </a>
             <a
               onClick={() => {
