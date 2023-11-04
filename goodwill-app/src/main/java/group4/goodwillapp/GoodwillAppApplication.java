@@ -18,7 +18,7 @@ public class GoodwillAppApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowCredentials(true).allowedOrigins("*").allowedMethods("*");
+                registry.addMapping("/**").allowCredentials(true).allowedOrigins("http://localhost:3000").allowedMethods("*");
             }
         };
     }
