@@ -15,17 +15,17 @@ public class Feedback {
     private long feedBackId;
     private String message;
     private boolean isSingleParent;
-    private boolean isVeretran;
-    private boolean wasIncareated;
+    private boolean isVeteran;
+    private boolean wasIncarcerated;
     private boolean hasIDD;
     
-    public Feedback(long feedBackId, String message, boolean isSingleParent, boolean isVeretran, boolean wasIncareated,
+    public Feedback(long feedBackId, String message, boolean isSingleParent, boolean isVeteran, boolean wasIncareated,
             boolean hasIDD) {
         this.feedBackId = feedBackId;
         this.message = message;
         this.isSingleParent = isSingleParent;
-        this.isVeretran = isVeretran;
-        this.wasIncareated = wasIncareated;
+        this.isVeteran = isVeteran;
+        this.wasIncarcerated = wasIncareated;
         this.hasIDD = hasIDD;
     }
 

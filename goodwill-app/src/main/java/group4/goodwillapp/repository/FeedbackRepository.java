@@ -12,13 +12,11 @@ public interface FeedbackRepository extends MongoRepository<Feedback, Long>{
     //Get Feedback
     Optional<Feedback> findByFeedbackId(Long feedBackId);
 
-    Optional<Feedback> findByMessageContent(String message);
+    Optional<Feedback> findByIsSingleParent(boolean isSingleParent);
 
-    Optional<Feedback> findBySingleParent(boolean isSingleParent);
+    Optional<Feedback> findByIsVeteran(boolean isVeteran);
 
-    Optional<Feedback> findByVeteran(boolean isVeteran);
+    Optional<Feedback> findByWasIncareated(boolean beenIncarcerated);
 
-    Optional<Feedback> findByIncarceration(boolean beenIncarcerated);
-
-    Optional<Feedback> findByIDD(boolean hasIDD);
+    Optional<Feedback> findByHasIDD(boolean hasIDD);
 }

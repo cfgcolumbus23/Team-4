@@ -28,24 +28,24 @@ public class FeedbackService {
         return feedbackRepository.findAll();
     }
 
-    public Optional<Feedback> getFeedbackByMessageContent(String message) {
-        return feedbackRepository.findByMessageContent(message);
-    }
+    // public Optional<Feedback> getFeedbackByMessageContent(String message) {
+    //     return feedbackRepository.findByMessageContent(message);
+    // }
 
     public Optional<Feedback> getFeedbackBySingleParent(boolean isSingleParent) {
-        return feedbackRepository.findBySingleParent(isSingleParent);
+        return feedbackRepository.findByIsSingleParent(isSingleParent);
     }
 
     public Optional<Feedback> getFeedbackByVeteran(boolean isVeteran) {
-        return feedbackRepository.findByVeteran(isVeteran);
+        return feedbackRepository.findByIsVeteran(isVeteran);
     }
 
     public Optional<Feedback> getFeedbackByIncarceration(boolean beenIncarcerated) {
-        return feedbackRepository.findByIncarceration(beenIncarcerated);
+        return feedbackRepository.findByWasIncareated(beenIncarcerated);
     }
 
     public Optional<Feedback> getFeedbackByIDD(boolean hasIDD) {
-        return feedbackRepository.findByIDD(hasIDD);
+        return feedbackRepository.findByHasIDD(hasIDD);
     }
 
 }
