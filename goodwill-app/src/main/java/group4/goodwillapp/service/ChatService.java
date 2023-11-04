@@ -15,6 +15,8 @@ public class ChatService {
     @Autowired
     private ChatRepository chatRepository;
 
+    @Autowired
+    private IdCounterService idCounterService;
 
     
     public Optional<Chat> findByChatId(Long chatId){
@@ -26,6 +28,7 @@ public class ChatService {
     }
 
     public void saveChat(Chat chat){
+        chat.setChatId(idCounterService.getIdCounterNumByCollection("chats"));
         chatRepository.save(chat);
     }
 }

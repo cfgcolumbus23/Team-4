@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +17,14 @@ import lombok.Setter;
 public class Applicant extends Person {
     @Id
     private long applicantId;
+
+    @JsonProperty("timeApplied")
     private LocalDateTime timeApplied;
+
+    @JsonProperty("coursesTaken")
     private ArrayList<Course> coursesTaken;
+
+    @JsonProperty("coachId")
     private long coachId;//id of the current acting coach
 
     public Applicant(){}

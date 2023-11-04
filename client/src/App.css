@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.suggestion-box-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  border: solid;
+  border: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+.name-email-box {
+  justify-content: center;
+  align-items: center;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.select-all-apply-menu{
+  display: flex;
+  padding: 5px;
+  padding-bottom: 30px;
+  align-items: left;
+  flex-direction: column;
+}
+
+.left-align {
+  align-items: left;
+}
+
+.no-newline {
+  display: inline-flex;
+}
+
+.submit button{
+  font-size: 30px;
+  height: 70px;
+  width: 150px;
+  padding: 20px;
+}
+
+.dropdown-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.chat-box-container {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0;
+
 }

@@ -15,6 +15,9 @@ public class ChatLogService {
     @Autowired
     private ChatLogRepository chatLogRepository;
 
+    @Autowired
+    private IdCounterService idCounterService;
+
 
     //Find ChatLog
     public Optional<ChatLog> findByChatLogId(Long chatLogId){
@@ -39,6 +42,11 @@ public class ChatLogService {
     }
 
     public void saveChatLog(ChatLog chatLog){
+        chatLog.setChatLogId(idCounterService.getIdCounterNumByCollection("chat_log"));
+        chatLogRepository.save(chatLog);
+    }
+
+    public void updateChatLog(ChatLog chatLog){
         chatLogRepository.save(chatLog);
     }
     
