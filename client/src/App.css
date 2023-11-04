@@ -43,6 +43,10 @@
 }
 
 .chat-box-container {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
   position: absolute;
   bottom: 0;
+
 }

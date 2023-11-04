@@ -34,7 +34,8 @@ public class FeedbackService {
     // return feedbackRepository.findByMessageContent(message);
     // }
     public List<Feedback> getFeedbackByMessageContent(String message) {
-        return feedbackRepository.findAll().stream().filter(feedback -> feedback.getMessage().contains(message)).toList();
+        return feedbackRepository.findAll().stream().filter(feedback -> feedback.getMessage().contains(message))
+                .toList();
     }
 
     public Optional<Feedback> getFeedbackBySingleParent(boolean isSingleParent) {
