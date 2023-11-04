@@ -1,6 +1,8 @@
 import "../App.css";
 import React, { useState } from "react";
 
+
+//this creates a textbox based on the configurable inputs
 export default function TextBox({isRequired, fieldName, height}) {
 
   const [value, setValue] = useState("");

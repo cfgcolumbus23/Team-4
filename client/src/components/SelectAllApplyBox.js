@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Checkbox from './Checkbox';
 
+
+//create a select all that apply box
 const SelectAllApplyBox = () => {
   const [checkedOne, setCheckedOne] = React.useState(false);
   const [checkedTwo, setCheckedTwo] = React.useState(false);
@@ -48,7 +50,6 @@ const SelectAllApplyBox = () => {
         value={checkedFour}
         onChange={handleChangeFour}
       />
-      <button type="submit">Submit</button>
 
     </div>
   );

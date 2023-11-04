@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+
+//this is a checkbox object for selectoptionbox.js
 const App = ({label}) => {
   const [checked, setChecked] = React.useState(false);
 
@@ -20,6 +22,7 @@ const App = ({label}) => {
   );
 };
 
+//individual checkbox 
 const Checkbox = ({ label, value, onChange }) => {
   return (
     <label>
