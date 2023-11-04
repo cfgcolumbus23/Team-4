@@ -80,7 +80,7 @@ class App extends Component {
         <Navbar/>
         <NameComponent setName={this.setName} />
         <div className="align-center">
-          <h1>Welcome to Web Sockets</h1>
+          <h2>Chat with a Coach!</h2>
           <br />
           <br />
         </div>
