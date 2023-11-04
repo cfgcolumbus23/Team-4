@@ -34,8 +34,8 @@ public class CourseController {
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("/getAllCourses")
-    public ResponseEntity<Course> getAllCourses(@PathVariable Long courseId) {
+    @GetMapping("/getAll")
+    public ResponseEntity<Course> getAllCourses() {
         return null; // add funtionality
     }
 
