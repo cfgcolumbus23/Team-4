@@ -7,6 +7,7 @@ import { Navbar } from "./components/Navbar.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "./components/NavBar.css"; // Import the CSS file for Navbar
 import logo from "./logo.svg";
+import AppChat from "./pages/ChatPageTest";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Navbar />
       </header>
       <body>
-        <SuggestionPage2 />
+        <AppChat />
+        {/* <SuggestionPage2 /> */}
         {/* <TrainingPage /> */}
         {/* <ChatPage/> */}
       </body>
