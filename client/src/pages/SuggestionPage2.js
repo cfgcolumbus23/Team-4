@@ -26,8 +26,6 @@ function SuggestionPage2() {
     //   wasIncarcerated: false,
     //   hasIDD: false,
     // };
-    console.log("testing");
-
     // const formData = new FormData();
     // formData.append("feedbackId", 7);
     // formData.append("message", "hi");
@@ -39,10 +37,10 @@ function SuggestionPage2() {
     axios.post("/feedback/save", {
       feedbackId: 7,
       message: feedback,
-      isSingleParent: false,
-      isVeteran: false,
-      wasIncarcerated: false,
-      hasIDD: false,
+      isSingleParent: checkedOne,
+      isVeteran: checkedTwo,
+      wasIncarcerated: checkedThree,
+      hasIDD: checkedFour,
     });
   };
 
@@ -51,18 +49,24 @@ function SuggestionPage2() {
     // setValue(e.target.value);
     // console.log(value);
 
-    switch (e.id) {
+    switch (e.target.id) {
       case "name":
-        setName(e.value);
+        setName(e.target.value);
         break;
       case "feedback":
-        setFeedback(e.value);
+        setFeedback(e.target.value);
         break;
       case "email":
-        setEmail(e.value);
+        setEmail(e.target.value);
         break;
     }
   }
+
+  const handleInputChange = (event) => {
+    // Update the name state with the new value entered in an input field
+    setName(event.target.value);
+  };
+
   const inputStyleFeedback = {
     height: "250px",
     width: "500px", // Increase the width to make it bigger
@@ -122,7 +126,9 @@ function SuggestionPage2() {
           style={inputStyleName}
           id="name"
           name="name"
-          onChange={handleChangedValue}
+          onChange={(e) => {
+            handleChangedValue(e);
+          }}
         />
       </div>
       <div className="name-email-box">

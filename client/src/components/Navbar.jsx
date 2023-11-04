@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import CbusGoodwill from "../data/CbusGoodwill.png";
 import "./NavBar.css"; // Import the CSS file
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Link, Route, BrowserRouter as Router, Routes, useNavigate } from "react-router-dom";
 import SuggestionPage2 from "../pages/SuggestionPage2";
 import TrainingPage from "../pages/TrainingPage";
 import ChatPage from "../pages/ChatPage";
 
 export const Navbar = () => {
+  // let navigate = useNavigate();
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const [isDonateDropdownOpen, setIsDonateDropdownOpen] = useState(false);
