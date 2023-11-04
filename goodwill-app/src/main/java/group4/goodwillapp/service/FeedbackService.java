@@ -41,7 +41,7 @@ public class FeedbackService {
     }
 
     public Optional<Feedback> getFeedbackByIncarceration(boolean beenIncarcerated) {
-        return feedbackRepository.findByWasIncareated(beenIncarcerated);
+        return feedbackRepository.findByWasIncarcerated(beenIncarcerated);
     }
 
     public Optional<Feedback> getFeedbackByIDD(boolean hasIDD) {
