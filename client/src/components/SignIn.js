@@ -24,13 +24,13 @@ function SignIn() {
 
     try {
       // Replace 'your-api-endpoint' with the actual endpoint of your authentication API
-      const response = await fetch('your-api-endpoint', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const formData = new URLSearchParams();
+formData.append('email', email);
+formData.append('password', password);
+
+const response = await fetch('http://localhost:8080/applicant/checkuserlogin/jana@gmail.com/password123', {
+  method: 'GET',
+});
 
       if (response.ok) {
         // Authentication was successful, you can redirect the user to a new page
