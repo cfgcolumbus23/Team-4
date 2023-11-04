@@ -7,13 +7,14 @@ const Submit = () => {
 
     const [postField, setPostFields] = useState(false)
     const handleSubmit = () => {
+        
 
     }
 
 
   return (
     <div class="select-all-apply-menu align-left">
-      <button onClick={() => setPostFields(true)} type="Submit">Submit</button>
+      <button onClick={handleSubmit} type="Submit">Submit</button>
     </div>
   );
 };
