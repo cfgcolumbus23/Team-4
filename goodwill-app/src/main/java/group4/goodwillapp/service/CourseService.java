@@ -16,8 +16,9 @@ public class CourseService {
     private CoursesRepository coursesRepository;
 
     // Course save and find and findAll
-    public void saveCourse(Course course) {
+    public Course saveCourse(Course course) {
         coursesRepository.save(course);
+        return course;
     }
 
     public Optional<Course> getCourseById(Long courseId) {

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import group4.goodwillapp.model.IdCounter;
 
 @Repository
-public interface IdCounterRepository extends MongoRepository<IdCounter, Long>{
+public interface IdCounterRepository extends MongoRepository<IdCounter, String>{
     Optional<IdCounter> findBycollectionName(String collectionName);
 }
