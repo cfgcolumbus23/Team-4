@@ -1,6 +1,6 @@
 import * as React from "react";
 import Checkbox from "./Checkbox";
-
+import SelectAllApply from "/SelectAllApply,css"
 //create a select all that apply box
 const SelectAllApplyBox = () => {
   const [checkedOne, setCheckedOne] = React.useState(false);

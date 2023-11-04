@@ -1,5 +1,7 @@
 package group4.goodwillapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +17,7 @@ import group4.goodwillapp.model.Course;
 import group4.goodwillapp.service.CourseService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/courses")
 public class CourseController {
 
@@ -35,8 +37,12 @@ public class CourseController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<Course> getAllCourses() {
-        return null; // add funtionality
+    public ResponseEntity<List<Course>> getAllCourses() {
+        try{
+            return new ResponseEntity<List<Course>>(courseService.getAllCourses(), HttpStatus.OK);
+        }catch(Exception e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }  
     }
 
     

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import group4.goodwillapp.service.ApplicantService;
 
 @RestController
 @RequestMapping("/applicant")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ApplicantController {
 
     @Autowired
@@ -28,8 +30,8 @@ public class ApplicantController {
     }
 
     @GetMapping("/get/{appId}")
-    public ResponseEntity<Applicant> getApplicantById(@PathVariable Long applicantId) {
-        return applicantService.getApplicantById(applicantId)
+    public ResponseEntity<Applicant> getApplicantById(@PathVariable Long appId) {
+        return applicantService.getApplicantById(appId)
                 .map(applicant -> new ResponseEntity<>(applicant, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
@@ -42,6 +44,17 @@ public class ApplicantController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }  
     }
+
+    @GetMapping("/progress/{appId}")
+    public Integer getApplicantProgressById(@PathVariable Long appId) {
+        return applicantService.getApplicantProgressBar(appId);
+    }
+
+    @GetMapping("/checkuserlogin/{username}/{password}") 
+    public boolean checkUserLogin(@PathVariable String username, @PathVariable String password) {
+        return applicantService.checkUserLogin(username, password);
+    }
+    
 
     
 }

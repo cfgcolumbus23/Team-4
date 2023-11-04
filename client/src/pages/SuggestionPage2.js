@@ -1,16 +1,15 @@
-// Import component before using it
-// import SelectAllApplyBox from "../components/SelectAllApplyBox";
-// import TextBox from "../components/TextBox";
 import "../App.css";
 import React, { useState } from "react";
 import axios from "axios";
-// import Submit from "../components/Submit";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import "./SuggestionPage2.css";
+
 
 //Render the suggestion page
 function SuggestionPage2() {
   axios.defaults.baseURL = "http://localhost:8080";
 
-  const [value, setValue] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -26,13 +25,6 @@ function SuggestionPage2() {
     //   wasIncarcerated: false,
     //   hasIDD: false,
     // };
-    // const formData = new FormData();
-    // formData.append("feedbackId", 7);
-    // formData.append("message", "hi");
-    // formData.append("isSingleParent", false);
-    // formData.append("isVeteran", false);
-    // formData.append("wasIncarcerated", false);
-    // formData.append("hasIDD", false);
 
     axios.post("/feedback/save", {
       feedbackId: 7,
@@ -42,6 +34,15 @@ function SuggestionPage2() {
       wasIncarcerated: checkedThree,
       hasIDD: checkedFour,
     });
+
+    //setEmail(false);*************** autoclear
+    // feedback = "";
+    // name = "";
+    // email = "";
+    // checkedOne = false;
+    // checkedTwo = false;
+    // checkedThree = false;
+    // checkedFour = false;
   };
 
   //for textboxes
@@ -118,64 +119,70 @@ function SuggestionPage2() {
 
   //return
   return (
-    <div className="suggestion-box-container">
-      <div className="name-email-box">
-        <h2>Phone Number</h2>
-        <input
-          type="text"
-          style={inputStyleName}
-          id="name"
-          name="name"
-          onChange={(e) => {
-            handleChangedValue(e);
-          }}
-        />
+    <div>
+      <Navbar />
+      <div className="suggestion-box-container">
+        <div className="name-email-box">
+          <h2>Phone Number</h2>
+          <input
+            type="text"
+            style={inputStyleName}
+            id="name"
+            name="name"
+            onChange={(e) => {
+              handleChangedValue(e);
+            }}
+          />
+        </div>
+        <div className="name-email-box">
+          <h2>Email</h2>
+          <input
+            type="text"
+            style={inputStyleName}
+            id="email"
+            name="name"
+            onChange={handleChangedValue}
+          />
+        </div>
+        <div className="name-email-box">
+          <h2>* Feedback</h2>
+          <input
+            type="text"
+            style={inputStyleFeedback}
+            id="feedback"
+            name="name"
+            onChange={handleChangedValue}
+          />
+        </div>
+        <div class="select-all-apply-menu align-left">
+          <h2>Choose all that apply:</h2>
+          <Checkbox
+            label="Single Parent"
+            value={checkedOne}
+            onChange={handleChangeOne}
+          />
+          <Checkbox
+            label="Veteran"
+            value={checkedTwo}
+            onChange={handleChangeTwo}
+          />
+          <Checkbox
+            label="Incarcaerated"
+            value={checkedThree}
+            onChange={handleChangeThree}
+          />
+          <Checkbox
+            label="I/DD"
+            value={checkedFour}
+            onChange={handleChangeFour}
+          />
+        </div>
+        <div class="submit" style={{ color: "#007bff" }}>
+          <button onClick={handleSubmit}>Submit</button>
+        </div>
       </div>
-      <div className="name-email-box">
-        <h2>Email</h2>
-        <input
-          type="text"
-          style={inputStyleName}
-          id="email"
-          name="name"
-          onChange={handleChangedValue}
-        />
-      </div>
-      <div className="name-email-box">
-        <h2>* Feedback</h2>
-        <input
-          type="text"
-          style={inputStyleFeedback}
-          id="feedback"
-          name="name"
-          onChange={handleChangedValue}
-        />
-      </div>
-      <div class="select-all-apply-menu align-left">
-        <h2>Choose all that apply:</h2>
-        <Checkbox
-          label="Single Parent"
-          value={checkedOne}
-          onChange={handleChangeOne}
-        />
-        <Checkbox
-          label="Veteran"
-          value={checkedTwo}
-          onChange={handleChangeTwo}
-        />
-        <Checkbox
-          label="Incarcaerated"
-          value={checkedThree}
-          onChange={handleChangeThree}
-        />
-        <Checkbox
-          label="I/DD"
-          value={checkedFour}
-          onChange={handleChangeFour}
-        />
-      </div>
-      <div class="submit">
-        <button onClick={handleSubmit}>Submit</button>
+      <div className="footer">
+        <Footer />
       </div>
     </div>
   );

@@ -35,4 +35,17 @@ public class ApplicantService {
     public Optional<List<Applicant>> getApplicantByCoachId(Long coachId) {
         return applicantRepository.findAllByCoachId(coachId);
     }
+
+    public Integer getApplicantProgressBar(long applicantId) {
+        
+        Applicant applicant = getApplicantById(applicantId).get();
+
+        double result =  (double) (applicant.getCoursesTaken().size()/applicant.getCurrCareerPath().getCourseIds().size());
+
+        return (int) Math.round(result);
+    }
+
+    public boolean checkUserLogin(String username, String password) {
+        return 0 != getAllApplicants().stream().filter(data -> data.getEmail().equals(username)).filter(data -> data.getPassword().equals(password)).count();
+    }
 }
