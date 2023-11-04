@@ -24,7 +24,7 @@ export const Navbar = () => {
         <nav>
             <div className="navbar-container">
                 <ul>
-                <div className="logo">
+                                    <div className="logo">
                     <img src={CbusGoodwill} alt  = "Goodwill Logo"/>    
                 </div>
                     <li>
