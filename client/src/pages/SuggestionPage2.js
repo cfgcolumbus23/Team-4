@@ -15,15 +15,6 @@ function SuggestionPage2() {
   const handleSubmit = () => {
     axios.defaults.baseURL = "http://localhost:8080";
 
-    // const postObject = {
-    //   feedbackId: 7,
-    //   message: "feedback",
-    //   isSingleParent: false,
-    //   isVeteran: false,
-    //   wasIncarcerated: false,
-    //   hasIDD: false,
-    // };
-
     axios.post("/feedback/save", {
       feedbackId: 7,
       message: feedback,
@@ -33,21 +24,11 @@ function SuggestionPage2() {
       hasIDD: checkedFour,
     });
 
-    //setEmail(false);*************** autoclear
-    // feedback = "";
-    // name = "";
-    // email = "";
-    // checkedOne = false;
-    // checkedTwo = false;
-    // checkedThree = false;
-    // checkedFour = false;
+    //setEmail(false);*************** autoclear?
   };
 
   //for textboxes
   function handleChangedValue(e) {
-    // setValue(e.target.value);
-    // console.log(value);
-
     switch (e.target.id) {
       case "name":
         setName(e.target.value);
