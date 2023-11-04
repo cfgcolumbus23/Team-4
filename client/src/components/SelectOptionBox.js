@@ -10,22 +10,27 @@ function SelectOptionBox() {
    useEffect(() => {
     fetch("/courses/getAllCourses/")
       .then(response => response.json())  //function(response) {return {response.json}}
-      .then(data =>  setOptionsData(data));
-   })
-   .catch((error) => {
-    console.error("Error fetching courses", error);
-   });
+      .then(data =>  setOptionsData(data))
+      .catch((error) => {
+        console.error("Error fetching courses", error);
+    })
+   }, []);
+   
 
    const [optionsData, setOptionsData] = useState([]);
+  // const options = [
+  //   { value: 'chocolate', label: 'Chocolate' },
+  //   { value: 'strawberry', label: 'Strawberry' },
+  //   { value: 'vanilla', label: 'Vanilla' }
+  // ]
 
       
-    const MyComponent = () => (
-        <Select options={optionsData}/>
-      )
 
     return (
     <div class="select-all-apply-menu">
-        <MyComponent/>
+        {/* <MyComponent/> */}
+        <Select Options={optionsData}/>
+
     </div>
     );
 }

@@ -14,8 +14,8 @@ function SuggestionPage() {
         <TextBox isRequired="Not Required" fieldName="Email" height="50px"/>
         <TextBox isRequired="Not Required" fieldName="Name" height="50px"/>
         <TextBox isRequired="Required" fieldName="Feedback" height="400px"/>
-        <Submit/>
         <SelectAllApplyBox/>
+        <Submit/>
     </div>
   );
 }
