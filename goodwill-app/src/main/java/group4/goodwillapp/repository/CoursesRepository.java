@@ -15,11 +15,6 @@ public interface CoursesRepository extends MongoRepository<Course, Long> {
     //Get Course
     Optional<Course> findByCourseId(Long courseId);
 
-    //Get Feedback
-    Optional<Feedback> findByFeedbackId(Long feedBackId);
-
-    //Find Coach
-    Optional<Coach> findByCoachId(Long coachId);
 
     //Find ChatLog
     Optional<ChatLog> findByChatLogId(Long chatLogId);
