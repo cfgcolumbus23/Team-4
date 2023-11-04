@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import group4.goodwillapp.model.Course;
-import group4.goodwillapp.service.MongoDBService;
+import group4.goodwillapp.service.CourseService;
 
 @RestController
 @RequestMapping("/courses")
 public class CourseController {
 
     @Autowired
-    private MongoDBService mongoDBService;
+    private CourseService courseService;
 
     @PostMapping("/saveCourse")
     public void saveCourse(@RequestBody Course course) {
-        mongoDBService.saveCourse(course);
+        courseService.saveCourse(course);
     }
 
     @GetMapping("/getCourse/{courseId}")
     public ResponseEntity<Course> getCourseById(@PathVariable Long courseId) {
-        return mongoDBService.getCourseById(courseId)
+        return courseService.getCourseById(courseId)
                 .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

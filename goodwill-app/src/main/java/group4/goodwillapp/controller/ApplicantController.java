@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import group4.goodwillapp.model.Applicant;
-import group4.goodwillapp.service.MongoDBService;
+import group4.goodwillapp.service.ApplicantService;
 
 @RestController
 @RequestMapping("/applicant")
