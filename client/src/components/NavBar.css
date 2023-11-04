@@ -8,18 +8,16 @@ ul {
     align-items: center;
     background-color: rgba(29, 70, 170, 1); /* Set the background color to light blue */
     font-family: sans-serif; /* Change the font to sans-serif */
+
     @media (max-width: 968px) {
-        flex-direction:column;
+        flex-direction: column;
+        justify-content: center; /* Center items vertically on smaller screens */
     }
 }
+
 /* Style the "Missions" item */
 li:first-child {
     margin-left: 20px; /* Add a left margin to move it away from the edge */
-}
-
-/* Style the last item in the list */
-li:last-child {
-    margin-right: 20px; /* Add a right margin to move it to the left */
 }
 
 /* Add a background color to the logo */
@@ -44,6 +42,16 @@ li {
     margin-bottom: 5px;
 }
 
+/* Add a background color to the "Submit" item */
+li:nth-child(2) {
+    margin-right: 20px; /* Add a right margin to separate "Submit" */
+}
+
+/* Add a background color to the "RecChat" item */
+li:nth-child(3) {
+    margin-right: 20px; /* Add a right margin to separate "RecChat" */
+}
+
 /* Dropdown menu styles (if applicable) */
 .dropdown {
     position: absolute;
@@ -61,9 +69,6 @@ li {
     display: block; /* Display items as block elements to stack vertically */
     padding: 5px 0; /* Add padding between items for spacing */
 }
-
-
-
 
 /* Your other styles for dropdown links and buttons here */
 

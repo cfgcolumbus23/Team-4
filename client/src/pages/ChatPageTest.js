@@ -1,3 +1,6 @@
+import "./App.css";
+import { Navbar } from "../components/Navbar.jsx";
+import "../components/NavBar.css"; // Import the CSS file for Navbar
 import React, { Component } from "react";
 import SockJsClient from "react-stomp";
 import "./App.css";
@@ -7,7 +10,7 @@ import { TextField } from "@mui/material";
 import { DialogActions } from "@mui/material";
 import { Button } from "@mui/material";
 
-class AppChat extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +18,10 @@ class AppChat extends Component {
       typedMessage: "",
       name: "",
     };
+  }
+
+  componentDidMount() {
+    this.clientRef.connect();
   }
 
   setName = (name) => {
@@ -101,7 +108,7 @@ class AppChat extends Component {
         <br />
         <div className="align-center">{this.displayMessages()}</div>
         <SockJsClient
-          url="http://localhost:8088/websocket-chat/"
+          url="/ws/"
           topics={["/topic/user"]}
           onConnect={() => {
             console.log("connected");
@@ -124,4 +131,4 @@ class AppChat extends Component {
   }
 }
 
-export default AppChat;
+export default App;
