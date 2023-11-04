@@ -5,7 +5,7 @@ import ChatPage from "./pages/ChatPage";
 import { Navbar } from "./components/Navbar.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "./components/NavBar.css"; // Import the CSS file for Navbar
-//import ProgressBar from "./components/ProgressBar.jsx"; // Import the ProgressBar component
+import ProgressBar from "./components/ProgressBar.jsx"; // Import the ProgressBar component
 import logo from "./logo.svg";
 import AppChat from "./pages/ChatPageTest";
 import React, { Component } from "react";
@@ -25,9 +25,10 @@ function App() {
         <Navbar />
       </header>
       <body>
+        //<ProgressBar /> {/* Include the ProgressBar component here */}
         <SuggestionPage2 />
-        { <TrainingPage /> }
-        {<ChatPage/>}
+        {/* <TrainingPage /> */}
+        {/* <ChatPage/> */}
       </body>
     </div>
   );
