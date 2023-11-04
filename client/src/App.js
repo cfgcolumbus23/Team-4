@@ -1,34 +1,24 @@
-import './App.css'; // Import the main CSS file
-import './components/NavBar.css'; // Import the CSS file for Navbar
-import { Navbar } from './components/Navbar.jsx';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-import TestRec from './pages/SubmitARec';
-import TestChatbox from './pages/ChatBox';
-import TestTraining from './pages/ChatBox';
-import SignIn from './components/SignIn';
-
+import "./App.css";
+import SuggestionPage2 from "./pages/SuggestionPage2";
+import TrainingPage from "./pages/TrainingPage";
+import ChatPage from "./pages/ChatPage";
+import { Navbar } from "./components/Navbar.jsx";
+import { BrowserRouter } from "react-router-dom";
+import "./components/NavBar.css"; // Import the CSS file for Navbar
+//import ProgressBar from "./components/ProgressBar.jsx"; // Import the ProgressBar component
+import logo from "./logo.svg";
 
 function App() {
   return (
     <div>
-
-      <BrowserRouter>
-      <Navbar />
-
-      <Routes>
-        <Route path='/TestRec' element={<TestRec/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/ChatBox' element={<TestChatbox/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/Training' element={<TestTraining/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/Your-Progress' element={<SignIn/>}/>
-      </Routes>
-      </BrowserRouter>
-     
+      <header>
+        <Navbar />
+      </header>
+      <body>
+        <SuggestionPage2 />
+        { <TrainingPage /> }
+        {<ChatPage/>}
+      </body>
     </div>
   );
 }

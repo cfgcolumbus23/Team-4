@@ -13,35 +13,40 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+function SignIn() {
+  const [error, setError] = React.useState(''); // State to store error message
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
-
-export default function SignIn() {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const email = data.get('email');
+    const password = data.get('password');
+
+    try {
+      // Replace 'your-api-endpoint' with the actual endpoint of your authentication API
+      const response = await fetch('your-api-endpoint', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        // Authentication was successful, you can redirect the user to a new page
+        console.log('Authentication successful, redirecting to a new page.');
+        // Redirect logic here (e.g., using React Router)
+      } else {
+        const responseData = await response.json();
+        setError(responseData.message); // Display the error message from the API
+      }
+    } catch (error) {
+      setError('An error occurred while processing your request.');
+    }
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={createTheme()}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -52,9 +57,10 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'rgb(29, 70, 170)' }}>
             <LockOutlinedIcon />
-          </Avatar>
+            </Avatar>
+
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -91,6 +97,11 @@ export default function SignIn() {
             >
               Sign In
             </Button>
+            {error && (
+              <Typography variant="body2" color="error">
+                {error}
+              </Typography>
+            )}
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
@@ -105,8 +116,9 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
 }
+
+export default SignIn;
