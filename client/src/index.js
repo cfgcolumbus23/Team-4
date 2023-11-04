@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import SuggestionPage2 from "./pages/SuggestionPage2";
 import TrainingPage from "./pages/TrainingPage";
 import * as serviceWorker from "./ServiceWorker";

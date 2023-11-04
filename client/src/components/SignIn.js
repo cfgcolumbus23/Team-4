@@ -28,7 +28,6 @@ function SignIn() {
       // const response = await fetch('http://localhost:8080/applicant/' + email + '/' + password, {
       //   method: 'GET',
       // });
-      axios.defaults.baseURL = "http://localhost:8080/"
       const response =  axios.get("http://localhost:8080/applicant/checkuserlogin/" + email + "/" + password);
 
       if (response.ok) {
