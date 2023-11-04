@@ -8,6 +8,7 @@ import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import SuggestionPage2 from "./pages/SuggestionPage2";
 import TrainingPage from "./pages/TrainingPage";
 import * as serviceWorker from "./ServiceWorker";
+
 import AppChat from "./pages/ChatPageTest";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,6 +21,8 @@ root.render(
         <Route exact path="/SuggestionPage" element={<SuggestionPage2 />} />
         <Route exact path="/ChatPage" element={<AppChat />} />
         <Route exact path="/TrainingPage" element={<TrainingPage />} />
+        <Route exact path="/Your-Progress" element={<SignIn/>} />
+
       </Routes>
     </Router>
   </React.StrictMode>
