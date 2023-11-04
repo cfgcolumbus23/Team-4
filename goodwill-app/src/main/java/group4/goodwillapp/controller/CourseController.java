@@ -26,7 +26,14 @@ public class CourseController {
     }
 
     @GetMapping("/getCourse/{courseId}")
-    public ResponseEntity<Course> getCourse(@PathVariable Long courseId) {
+    public ResponseEntity<Course> getCourseById(@PathVariable Long courseId) {
+        return mongoDBService.getCourseById(courseId)
+                .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @GetMapping("/getAllCourses")
+    public ResponseEntity<Course> getAllCourses(@PathVariable Long courseId) {
         return mongoDBService.getCourseById(courseId)
                 .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
