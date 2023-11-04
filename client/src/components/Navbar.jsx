@@ -17,6 +17,7 @@ export const Navbar = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const [isDonateDropdownOpen, setIsDonateDropdownOpen] = useState(false);
+  const [isProgressDropdownOpen, setIsProgressDropdownOpen] = useState(false); // New state variable
 
   const toggleServicesDropdown = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
@@ -28,6 +29,10 @@ export const Navbar = () => {
 
   const toggleDonateDropdown = () => {
     setIsDonateDropdownOpen(!isDonateDropdownOpen);
+  };
+
+  const toggleProgressDropdown = () => { // New function
+    setIsProgressDropdownOpen(!isProgressDropdownOpen);
   };
 
   return (
@@ -114,25 +119,6 @@ export const Navbar = () => {
               </div>
             )}
           </li>
-
-          {/* <Router>
-            <div className="navbar-container">
-              <Link to="/SuggestionPage" className="navbar-element">
-                Submit a Rec
-              </Link>
-              <Link to="/ChatPage" className="navbar-element">
-                Chat
-              </Link>
-              <Link to="/TrainingPage" className="navbar-element">
-                Training Stories
-              </Link>
-            </div>
-            <Routes>
-              <Route path="/SuggestionPage" Component={SuggestionPage2} />
-              <Route path="/ChatPage" Component={ChatPage} />
-              <Route path="/TrainingPage" Component={TrainingPage} />
-            </Routes>
-          </Router> */}
           <li>
             <a
               onClick={() => {
@@ -141,6 +127,8 @@ export const Navbar = () => {
             >
               Feedback
             </a>
+        </li>
+        <li>
             <a
               onClick={() => {
                 navigate("/ChatPage");
@@ -148,13 +136,27 @@ export const Navbar = () => {
             >
               Chat
             </a>
-            <a
-              onClick={() => {
-                navigate("/TrainingPage");
-              }}
+            </li>
+            <li>
+            <span
+              onMouseEnter={toggleProgressDropdown}
+              onMouseLeave={toggleProgressDropdown}
             >
               Training
+              {isProgressDropdownOpen && (
+                <div className="dropdown">
+                 <a
+              onClick={() => {
+                navigate("/Your-Progress" );
+              }}
+            >
+              Your Progress
             </a>
+                </div>
+              )}
+            </span>
+            </li>
+            <li>
             <Link
               to="https://www.goodwillcolumbus.org/services/for-individuals/find-a-job/"
               className="circular-button"
