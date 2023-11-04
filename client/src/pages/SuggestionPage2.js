@@ -2,12 +2,12 @@ import "../App.css";
 import React, { useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 //Render the suggestion page
 function SuggestionPage2() {
   axios.defaults.baseURL = "http://localhost:8080";
 
-  const [value, setValue] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -32,6 +32,15 @@ function SuggestionPage2() {
       wasIncarcerated: checkedThree,
       hasIDD: checkedFour,
     });
+
+    //setEmail(false);*************** autoclear
+    // feedback = "";
+    // name = "";
+    // email = "";
+    // checkedOne = false;
+    // checkedTwo = false;
+    // checkedThree = false;
+    // checkedFour = false;
   };
 
   //for textboxes
@@ -169,6 +178,9 @@ function SuggestionPage2() {
         <div class="submit">
           <button onClick={handleSubmit}>Submit</button>
         </div>
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </div>
   );

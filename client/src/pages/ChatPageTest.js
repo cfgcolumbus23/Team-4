@@ -1,14 +1,13 @@
-import "./App.css";
 import { Navbar } from "../components/Navbar.jsx";
 import "../components/NavBar.css"; // Import the CSS file for Navbar
 import React, { Component } from "react";
 import SockJsClient from "react-stomp";
-import "./App.css";
 import "../css/MessageStyle.css";
 import NameComponent from "../components/NameComponent";
 import { TextField } from "@mui/material";
 import { DialogActions } from "@mui/material";
 import { Button } from "@mui/material";
+import Footer from "../components/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -26,25 +25,25 @@ class App extends Component {
 
   setName = (name) => {
     try {
-        console.log(name);
-        this.setState({ name: name });
+      console.log(name);
+      this.setState({ name: name });
     } catch (error) {
-        //nothing, just to stop buttom from being clicked when not loaded   
-
+      //nothing, just to stop buttom from being clicked when not loaded
     }
   };
 
   sendMessage = () => {
     try {
-        this.clientRef.sendMessage(
-            "/app/user-all",
-            JSON.stringify({
-              name: this.state.name,
-              message: this.state.typedMessage,
-            })
-          );
+      this.clientRef.sendMessage(
+        "/app/user-all",
+        JSON.stringify({
+          name: this.state.name,
+          message: this.state.typedMessage,
+        })
+      );
+      //   this.state.typedMessage = ""; *************** autoclear
     } catch (error) {
-        //nothing, just to stop buttom from being clicked when not loaded   
+      //nothing, just to stop buttom from being clicked when not loaded
     }
   };
 
@@ -77,7 +76,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
+        <Navbar />
         <NameComponent setName={this.setName} />
         <div className="align-center">
           <h2>Chat with a Coach!</h2>
@@ -136,6 +135,9 @@ class App extends Component {
             this.clientRef = client;
           }}
         />
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     );
   }
