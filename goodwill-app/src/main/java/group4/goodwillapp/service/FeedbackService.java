@@ -3,7 +3,6 @@ package group4.goodwillapp.service;
 import java.util.List;
 import java.util.Optional;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +28,7 @@ public class FeedbackService {
     }
 
     // public Optional<Feedback> getFeedbackByMessageContent(String message) {
-    //     return feedbackRepository.findByMessageContent(message);
+    // return feedbackRepository.findByMessageContent(message);
     // }
 
     public Optional<Feedback> getFeedbackBySingleParent(boolean isSingleParent) {
@@ -41,7 +40,7 @@ public class FeedbackService {
     }
 
     public Optional<Feedback> getFeedbackByIncarceration(boolean beenIncarcerated) {
-        return feedbackRepository.findByWasIncareated(beenIncarcerated);
+        return feedbackRepository.findByWasIncarcerated(beenIncarcerated);
     }
 
     public Optional<Feedback> getFeedbackByIDD(boolean hasIDD) {
