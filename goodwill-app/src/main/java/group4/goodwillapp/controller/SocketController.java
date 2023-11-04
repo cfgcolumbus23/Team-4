@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 
 import group4.goodwillapp.model.MessageBean;
 
-//@CrossOrigin(origins = "http://localhost:3000")
 @Controller
 public class SocketController {
 
