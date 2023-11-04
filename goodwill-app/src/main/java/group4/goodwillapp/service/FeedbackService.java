@@ -14,8 +14,11 @@ public class FeedbackService {
     @Autowired
     private FeedbackRepository feedbackRepository;
 
-    // Feedback save and find and findAll
+    @Autowired
+    private IdCounterService idCounterService;
+
     public void saveFeedback(Feedback feedback) {
+        feedback.setFeedbackId(idCounterService.getIdCounterNumByCollection("feedback"));
         feedbackRepository.save(feedback);
     }
 
@@ -30,6 +33,9 @@ public class FeedbackService {
     // public Optional<Feedback> getFeedbackByMessageContent(String message) {
     // return feedbackRepository.findByMessageContent(message);
     // }
+    public List<Feedback> getFeedbackByMessageContent(String message) {
+        return feedbackRepository.findAll().stream().filter(feedback -> feedback.getMessage().contains(message)).toList();
+    }
 
     public Optional<Feedback> getFeedbackBySingleParent(boolean isSingleParent) {
         return feedbackRepository.findByIsSingleParent(isSingleParent);

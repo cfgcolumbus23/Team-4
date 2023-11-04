@@ -38,7 +38,7 @@ function SuggestionPage2() {
 
     axios.post("/feedback/save", {
       feedbackId: 7,
-      message: "feedback",
+      message: feedback,
       isSingleParent: false,
       isVeteran: false,
       wasIncarcerated: false,
