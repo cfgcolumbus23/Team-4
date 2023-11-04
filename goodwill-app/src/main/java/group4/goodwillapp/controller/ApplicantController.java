@@ -20,16 +20,16 @@ import group4.goodwillapp.service.MongoDBService;
 public class ApplicantController {
 
     @Autowired
-    private MongoDBService mongoDBService;
+    private ApplicantService applicantService;
 
     @PostMapping("/saveApplicant")
     public void saveCourse(@RequestBody Applicant applicant) {
-        mongoDBService.saveApplicant(applicant);
+        applicantService.saveApplicant(applicant);
     }
 
     @GetMapping("/getApplicant/{appId}")
     public ResponseEntity<Applicant> getApplicantById(@PathVariable Long applicantId) {
-        return mongoDBService.getApplicantById(applicantId)
+        return applicantService.getApplicantById(applicantId)
                 .map(applicant -> new ResponseEntity<>(applicant, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
@@ -37,7 +37,7 @@ public class ApplicantController {
     @GetMapping("/getAllApplicants")
     public ResponseEntity<List<Applicant>> getAllApplicants() {
         try{
-            return new ResponseEntity<List<Applicant>>(mongoDBService.getAllApplicants(), HttpStatus.OK);
+            return new ResponseEntity<List<Applicant>>(applicantService.getAllApplicants(), HttpStatus.OK);
         }catch(Exception e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }  
