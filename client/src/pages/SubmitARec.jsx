@@ -1,4 +1,4 @@
-const TestEl = () => <header className="App-header">
+const TestRec = () => <header className="App-header">
 <p>
   Edit <code>src/App.js</code> and save to reload.
 </p>
@@ -13,4 +13,4 @@ const TestEl = () => <header className="App-header">
 </header>;
 
 
-export default TestEl;
+export default TestRec;
