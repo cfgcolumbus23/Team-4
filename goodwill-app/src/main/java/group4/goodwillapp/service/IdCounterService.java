@@ -19,4 +19,8 @@ public class IdCounterService {
         idCounterRepository.save(counter);
         return id;
     }
+
+    public void saveIdCounter(IdCounter idCounter){
+        idCounterRepository.save(idCounter);
+    }
 }

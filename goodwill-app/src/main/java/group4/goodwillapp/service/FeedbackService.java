@@ -15,9 +15,11 @@ public class FeedbackService {
     @Autowired
     private FeedbackRepository feedbackRepository;
 
-    // Feedback save and find and findAll
+    @Autowired
+    private IdCounterService idCounterService;
+
     public void saveFeedback(Feedback feedback) {
-     //   feedback.setId();
+        feedback.setFeedbackId(idCounterService.getIdCounterNumByCollection("feedback"));
         feedbackRepository.save(feedback);
     }
 
