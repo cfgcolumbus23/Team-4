@@ -42,7 +42,11 @@ public class ChatLogService {
     }
 
     public void saveChatLog(ChatLog chatLog){
-        chatLog.setChatLogId(idCounterService.getIdCounterNumByCollection("courses"));
+        chatLog.setChatLogId(idCounterService.getIdCounterNumByCollection("chat_log"));
+        chatLogRepository.save(chatLog);
+    }
+
+    public void updateChatLog(ChatLog chatLog){
         chatLogRepository.save(chatLog);
     }
     
