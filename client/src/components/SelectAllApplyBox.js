@@ -1,6 +1,5 @@
-import * as React from 'react';
-import Checkbox from './Checkbox';
-
+import * as React from "react";
+import Checkbox from "./Checkbox";
 
 //create a select all that apply box
 const SelectAllApplyBox = () => {
@@ -8,7 +7,6 @@ const SelectAllApplyBox = () => {
   const [checkedTwo, setCheckedTwo] = React.useState(false);
   const [checkedThree, setCheckedThree] = React.useState(false);
   const [checkedFour, setCheckedFour] = React.useState(false);
-
 
   const handleChangeOne = () => {
     setCheckedOne(!checkedOne);
@@ -26,7 +24,6 @@ const SelectAllApplyBox = () => {
     setCheckedFour(!checkedFour);
   };
 
-
   return (
     <div class="select-all-apply-menu align-left">
       <h2>Choose all that apply:</h2>
@@ -35,22 +32,13 @@ const SelectAllApplyBox = () => {
         value={checkedOne}
         onChange={handleChangeOne}
       />
+      <Checkbox label="Veteran" value={checkedTwo} onChange={handleChangeTwo} />
       <Checkbox
-        label="Veteran"
-        value={checkedTwo}
-        onChange={handleChangeTwo}
-      />
-        <Checkbox
         label="Incarcaerated"
         value={checkedThree}
         onChange={handleChangeThree}
       />
-        <Checkbox
-        label="I/DD"
-        value={checkedFour}
-        onChange={handleChangeFour}
-      />
-
+      <Checkbox label="I/DD" value={checkedFour} onChange={handleChangeFour} />
     </div>
   );
 };

@@ -5,22 +5,20 @@
   flex-direction: column;
   border: solid;
   border: 1px;
-  background-color: blue;
 }
 
 .name-email-box {
   justify-content: center;
   align-items: center;
+
 }
 
 .select-all-apply-menu{
   display: flex;
-  background-color: white;
-  padding: 20px;
-  justify-content: center;
+  padding: 5px;
+  padding-bottom: 30px;
   align-items: left;
   flex-direction: column;
-
 }
 
 .left-align {
@@ -32,13 +30,16 @@
 }
 
 .submit button{
-  font-size: 50px;
-  height: 100px;
-  width: 200px;
+  font-size: 30px;
+  height: 70px;
+  width: 150px;
+  padding: 20px;
 }
 
 .dropdown-container{
   display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 
 .chat-box-container {

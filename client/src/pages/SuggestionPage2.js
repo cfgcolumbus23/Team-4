@@ -3,31 +3,47 @@
 // import TextBox from "../components/TextBox";
 import "../App.css";
 import React, { useState } from "react";
+import axios from "axios";
 // import Submit from "../components/Submit";
 
 //Render the suggestion page
 function SuggestionPage2() {
+  axios.defaults.baseURL = "http://localhost:8080";
+
   const [value, setValue] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [feedback, setFeedback] = useState("");
 
   const handleSubmit = () => {
-    const postObject = {
-      "message": "feedback",
-      "isSingleParent": false,
-      "isVeteran": false,
-      "wasIncarcerated": false,
-      "hasIDD": false,
-    };
-    fetch("http://localhost:8080/feedback/save", {
-      method: "POST",
-      body: postObject,
-    }).then(
-      fetch("http://localhost:8080/feedback/get/0")
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-    );
+    axios.defaults.baseURL = "http://localhost:8080";
+
+    // const postObject = {
+    //   feedbackId: 7,
+    //   message: "feedback",
+    //   isSingleParent: false,
+    //   isVeteran: false,
+    //   wasIncarcerated: false,
+    //   hasIDD: false,
+    // };
+    console.log("testing");
+
+    // const formData = new FormData();
+    // formData.append("feedbackId", 7);
+    // formData.append("message", "hi");
+    // formData.append("isSingleParent", false);
+    // formData.append("isVeteran", false);
+    // formData.append("wasIncarcerated", false);
+    // formData.append("hasIDD", false);
+
+    axios.post("/feedback/save", {
+      feedbackId: 7,
+      message: "feedback",
+      isSingleParent: false,
+      isVeteran: false,
+      wasIncarcerated: false,
+      hasIDD: false,
+    });
   };
 
   //for textboxes
@@ -153,9 +169,7 @@ function SuggestionPage2() {
         />
       </div>
       <div class="submit">
-        <button onClick={handleSubmit} type="Submit">
-          Submit
-        </button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
     </div>
   );
