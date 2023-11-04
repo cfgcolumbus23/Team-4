@@ -3,11 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import SuggestionPage2 from "./pages/SuggestionPage2";
 import TrainingPage from "./pages/TrainingPage";
 import * as serviceWorker from "./ServiceWorker";
+import SignIn from "./components/SignIn";
+
+
 
 import AppChat from "./pages/ChatPageTest";
 

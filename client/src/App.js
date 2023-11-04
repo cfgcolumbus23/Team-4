@@ -1,4 +1,5 @@
 import "./App.css";
+import React from 'react';
 import SuggestionPage2 from "./pages/SuggestionPage2";
 import TrainingPage from "./pages/TrainingPage";
 import { Navbar } from "./components/Navbar.jsx";
@@ -23,3 +24,5 @@ function App() {
   );
 
 }
+
+export default App;
