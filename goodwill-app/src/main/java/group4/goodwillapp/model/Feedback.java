@@ -21,7 +21,6 @@ public class Feedback {
     
     public Feedback(long feedbackId, String message, boolean isSingleParent, boolean isVeteran, boolean wasIncareated,
             boolean hasIDD) {
-        this.feedbackId = feedbackId;
         this.message = message;
         this.isSingleParent = isSingleParent;
         this.isVeteran = isVeteran;

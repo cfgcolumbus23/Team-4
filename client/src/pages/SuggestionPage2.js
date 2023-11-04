@@ -14,18 +14,17 @@ function SuggestionPage2() {
 
   const handleSubmit = () => {
     const postObject = {
-      feedBackID: 100,
-      message: feedback,
-      isSingleParent: false,
-      isVeretran: false,
-      wasIncareated: false,
-      hasIDD: false,
+      "message": "feedback",
+      "isSingleParent": false,
+      "isVeteran": false,
+      "wasIncarcerated": false,
+      "hasIDD": false,
     };
-    fetch("http://localhost:8080/save", {
+    fetch("http://localhost:8080/feedback/save", {
       method: "POST",
       body: postObject,
     }).then(
-      fetch("http://localhost:8080/get/100")
+      fetch("http://localhost:8080/feedback/get/0")
         .then((response) => response.json())
         .then((response) => console.log(response))
     );
