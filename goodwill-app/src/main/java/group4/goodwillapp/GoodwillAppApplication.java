@@ -15,11 +15,15 @@ public class GoodwillAppApplication {
 
 	@Bean
     public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowCredentials(true).allowedOrigins("*").allowedMethods("*");
-            }
-        };
-    }
+    return new WebMvcConfigurer() {
+        @Override
+        public void addCorsMappings(CorsRegistry registry) {
+            registry.addMapping("/**")
+                    .allowCredentials(true)
+                    .allowedOrigins("https://localhost:3000") // Replace with your allowed origins
+                    .allowedMethods("*");
+        }
+    };
+}
+
 }
