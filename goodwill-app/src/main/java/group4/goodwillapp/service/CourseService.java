@@ -15,10 +15,13 @@ public class CourseService {
     @Autowired
     private CoursesRepository coursesRepository;
 
+    @Autowired
+    private IdCounterService idCounterService;
+
     // Course save and find and findAll
-    public Course saveCourse(Course course) {
+    public void saveCourse(Course course) {
+        course.setCourseId(idCounterService.getIdCounterNumByCollection("courses"));
         coursesRepository.save(course);
-        return course;
     }
 
     public Optional<Course> getCourseById(Long courseId) {
