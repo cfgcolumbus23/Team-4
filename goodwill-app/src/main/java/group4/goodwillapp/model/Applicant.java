@@ -27,6 +27,10 @@ public class Applicant extends Person {
     @JsonProperty("coachId")
     private long coachId;//id of the current acting coach
 
+    @JsonProperty("currCareerPath") 
+    private CareerPath currCareerPath;
+    
+
     public Applicant(){}
 
     public Applicant(String name, String email, String phoneNum, int age, String password,
