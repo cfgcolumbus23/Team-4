@@ -49,6 +49,11 @@ public class ApplicantController {
     public Integer getApplicantProgressById(@PathVariable Long appId) {
         return applicantService.getApplicantProgressBar(appId);
     }
+
+    @GetMapping("/checkuserlogin/{username}/{password}") 
+    public boolean checkUserLogin(@PathVariable String username, @PathVariable String password) {
+        return applicantService.checkUserLogin(username, password);
+    }
     
 
     

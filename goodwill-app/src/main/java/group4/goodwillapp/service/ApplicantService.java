@@ -44,4 +44,8 @@ public class ApplicantService {
 
         return (int) Math.round(result);
     }
+
+    public boolean checkUserLogin(String username, String password) {
+        return 0 != getAllApplicants().stream().filter(data -> data.getEmail().equals(username)).filter(data -> data.getPassword().equals(password)).count();
+    }
 }
