@@ -1,27 +1,26 @@
 import React from "react";
 import Select from 'react-select'
+import { useState } from "react";
+import { useEffect } from "react";
 import "../App.css";
 
 //generates the options box to choose a particular goodwill course
 function SelectOptionBox() {
 
-    i = 0;
-    while (data != null) {
-      // Make a GET request to the endpoint
-      fetch("/courses/getCourse/0")
-      .then((response) => response.json()) 
-      .then(data => console.log(data));
-      options.push()
-      i++;
-    }
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-      ]
+   useEffect(() => {
+    fetch("/courses/getAllCourses/")
+      .then(response => response.json())  //function(response) {return {response.json}}
+      .then(data =>  setOptionsData(data));
+   })
+   .catch((error) => {
+    console.error("Error fetching courses", error);
+   });
+
+   const [optionsData, setOptionsData] = useState([]);
+
       
     const MyComponent = () => (
-        <Select options={options} />
+        <Select options={optionsData}/>
       )
 
     return (
