@@ -4,9 +4,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import group4.goodwillapp.model.Chat;
 import group4.goodwillapp.model.ChatLog;
 import group4.goodwillapp.repository.ChatLogRepository;
-import group4.goodwillapp.repository.ChatRepository;
 
 public class ChatLogService {
 
@@ -19,12 +19,25 @@ public class ChatLogService {
         return chatLogRepository.findByChatLogId(chatLogId);
     }
 
-    Optional<ChatLog> findByChatId(long chatId){
-        return chatLogRepository.findAll().stream().filter(chatLog -> {for()})
+    public Optional<ChatLog> findByChatId(long chatId){
+        return chatLogRepository.findAll().stream().filter((chatLog) -> {
+            for(Chat chat: chatLog.getChats()){
+                return chat.getChatId() == chatId;
+            }
+            return false;
+        }).findAny();
     }
 
-    Optional<ChatLog> findByApplicantId(long applicantId);
+    public Optional<ChatLog> findByApplicantId(long applicantId){
+       return chatLogRepository.findByApplicantId(applicantId);
+    }
 
-    Optional<ChatLog> findByCoachId(long coachId);
+    public Optional<ChatLog> findByCoachId(long coachId){
+        return chatLogRepository.findByCoachId(coachId);
+    }
+
+    public void saveChatLog(ChatLog chatLog){
+        chatLogRepository.save(chatLog);
+    }
     
 }
