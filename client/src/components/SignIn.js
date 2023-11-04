@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
+import axios from "axios";
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -24,13 +25,11 @@ function SignIn() {
 
     try {
       // Replace 'your-api-endpoint' with the actual endpoint of your authentication API
-      const response = await fetch('your-api-endpoint', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      // const response = await fetch('http://localhost:8080/applicant/' + email + '/' + password, {
+      //   method: 'GET',
+      // });
+      axios.defaults.baseURL = "http://localhost:8080/"
+      const response =  axios.get("http://localhost:8080/applicant/checkuserlogin/" + email + "/" + password);
 
       if (response.ok) {
         // Authentication was successful, you can redirect the user to a new page
