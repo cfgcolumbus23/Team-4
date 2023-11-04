@@ -16,7 +16,7 @@ public interface FeedbackRepository extends MongoRepository<Feedback, Long>{
 
     Optional<Feedback> findByIsVeteran(boolean isVeteran);
 
-    Optional<Feedback> findByWasIncareated(boolean beenIncarcerated);
+    Optional<Feedback> findByWasIncarcerated(boolean beenIncarcerated);
 
     Optional<Feedback> findByHasIDD(boolean hasIDD);
 }
