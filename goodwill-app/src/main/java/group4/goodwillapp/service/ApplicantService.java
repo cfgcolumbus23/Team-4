@@ -27,4 +27,8 @@ public class ApplicantService {
     public List<Applicant> getAllApplicants() {
         return applicantRepository.findAll();
     }
+
+    public Optional<List<Applicant>> getApplicantByCoachId(Long coachId) {
+        return applicantRepository.findAllByCoachId(coachId);
+    }
 }
