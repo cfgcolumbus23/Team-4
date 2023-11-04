@@ -1,7 +1,8 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.css'; // Import the main CSS file
+import './components/NavBar.css'; // Import the CSS file for Navbar
 import { Navbar } from './components/Navbar.jsx';
-import { BrowserRouter} from "react-router-dom"
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
