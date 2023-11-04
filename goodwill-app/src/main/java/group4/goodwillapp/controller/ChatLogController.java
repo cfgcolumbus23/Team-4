@@ -1,6 +1,7 @@
 package group4.goodwillapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import group4.goodwillapp.service.ChatLogService;
 
 @RestController
 @RequestMapping("/chatlog")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ChatLogController {
     
     @Autowired

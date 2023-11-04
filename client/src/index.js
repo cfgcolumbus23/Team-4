@@ -10,6 +10,7 @@ import SuggestionPage2 from "./pages/SuggestionPage2";
 import ChatPage from "./pages/ChatPage";
 import TrainingPage from "./pages/TrainingPage";
 import * as serviceWorker from "./ServiceWorker";
+import SignIn from './components/SignIn';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 serviceWorker.unregister();
@@ -21,6 +22,8 @@ root.render(
         <Route exact path="/SuggestionPage" element={<SuggestionPage2 />} />
         <Route exact path="/ChatPage" element={<ChatPage />} />
         <Route exact path="/TrainingPage" element={<TrainingPage />} />
+        <Route exact path="/Your-Progress" element={<SignIn/>} />
+
       </Routes>
     </Router>
   </React.StrictMode>
