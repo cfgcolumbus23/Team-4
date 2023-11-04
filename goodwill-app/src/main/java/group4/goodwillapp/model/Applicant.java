@@ -28,7 +28,7 @@ public class Applicant extends Person {
     private long coachId;//id of the current acting coach
 
     @JsonProperty("currCareerPath") 
-    private long cuuCareerPath;
+    private CareerPath currCareerPath;
     
 
     public Applicant(){}

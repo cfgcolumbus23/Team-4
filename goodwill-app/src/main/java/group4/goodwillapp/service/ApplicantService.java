@@ -35,4 +35,13 @@ public class ApplicantService {
     public Optional<List<Applicant>> getApplicantByCoachId(Long coachId) {
         return applicantRepository.findAllByCoachId(coachId);
     }
+
+    public Integer getApplicantProgressBar(long applicantId) {
+        
+        Applicant applicant = getApplicantById(applicantId).get();
+
+        double result =  (double) (applicant.getCoursesTaken().size()/applicant.getCurrCareerPath().getCourseIds().size());
+
+        return (int) Math.round(result);
+    }
 }

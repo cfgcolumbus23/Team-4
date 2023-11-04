@@ -1,5 +1,7 @@
 package group4.goodwillapp.model;
 
+import java.util.ArrayList;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,11 +12,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Document(collection = "carrerpaths")
+@Document(collection = "careerpaths")
 public class CareerPath {
     @Id
-    private long carrerPathId;
+    private long careerPathId;
 
-    @JsonProperty("courseId")
-    private long courseId;
+    @JsonProperty("courseIds")
+    private ArrayList<Long> courseIds;
+
 }
