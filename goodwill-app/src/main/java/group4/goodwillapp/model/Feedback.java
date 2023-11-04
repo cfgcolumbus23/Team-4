@@ -19,16 +19,14 @@ public class Feedback {
     private boolean wasIncarcerated;
     private boolean hasIDD;
     
-    public Feedback(long feedbackId, String message, boolean isSingleParent, boolean isVeteran, boolean wasIncareated,
+    public Feedback(long feedbackId, String message, boolean isSingleParent, boolean isVeteran, boolean wasIncarcerated,
             boolean hasIDD) {
         this.feedbackId = feedbackId;
         this.message = message;
         this.isSingleParent = isSingleParent;
         this.isVeteran = isVeteran;
-        this.wasIncarcerated = wasIncareated;
+        this.wasIncarcerated = wasIncarcerated;
         this.hasIDD = hasIDD;
     }
-
-
     
 }
