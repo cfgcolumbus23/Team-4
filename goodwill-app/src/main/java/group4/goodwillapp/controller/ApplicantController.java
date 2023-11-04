@@ -28,8 +28,8 @@ public class ApplicantController {
     }
 
     @GetMapping("/get/{appId}")
-    public ResponseEntity<Applicant> getApplicantById(@PathVariable Long applicantId) {
-        return applicantService.getApplicantById(applicantId)
+    public ResponseEntity<Applicant> getApplicantById(@PathVariable Long appId) {
+        return applicantService.getApplicantById(appId)
                 .map(applicant -> new ResponseEntity<>(applicant, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

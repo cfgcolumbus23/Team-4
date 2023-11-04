@@ -17,7 +17,7 @@ function App() {
       <body>
         <SuggestionPage2 />
         {/* <TrainingPage /> */}
-        {/* <ChatPage/> */}
+        {/* { <ChatPage/>} */}
       </body>
     </div>
   );

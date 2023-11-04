@@ -1,5 +1,7 @@
 package group4.goodwillapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,8 +37,8 @@ public class CourseController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<Course> getAllCourses() {
-        return null; // add funtionality
+    public List<Course> getAllCourses() {
+        return courseService.getAllCourses();
     }
 
     
