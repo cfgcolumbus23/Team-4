@@ -22,19 +22,19 @@ public class ApplicantController {
     @Autowired
     private ApplicantService applicantService;
 
-    @PostMapping("/saveApplicant")
+    @PostMapping("/save")
     public void saveCourse(@RequestBody Applicant applicant) {
         applicantService.saveApplicant(applicant);
     }
 
-    @GetMapping("/getApplicant/{appId}")
+    @GetMapping("/get/{appId}")
     public ResponseEntity<Applicant> getApplicantById(@PathVariable Long applicantId) {
         return applicantService.getApplicantById(applicantId)
                 .map(applicant -> new ResponseEntity<>(applicant, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("/getAllApplicants")
+    @GetMapping("/getAll")
     public ResponseEntity<List<Applicant>> getAllApplicants() {
         try{
             return new ResponseEntity<List<Applicant>>(applicantService.getAllApplicants(), HttpStatus.OK);

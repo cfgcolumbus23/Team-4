@@ -20,20 +20,20 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @PostMapping("/saveCourse")
+    @PostMapping("/save")
     public void saveCourse(@RequestBody Course course) {
         courseService.saveCourse(course);
     }
 
-    @GetMapping("/getCourse/{courseId}")
+    @GetMapping("/get/{courseId}")
     public ResponseEntity<Course> getCourseById(@PathVariable Long courseId) {
         return courseService.getCourseById(courseId)
                 .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("/getAllCourses")
-    public ResponseEntity<Course> getAllCourses(@PathVariable Long courseId) {
+    @GetMapping("/getAll")
+    public ResponseEntity<Course> getAllCourses() {
         return null; // add funtionality
     }
 

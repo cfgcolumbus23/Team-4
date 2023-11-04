@@ -17,6 +17,7 @@ public class FeedbackService {
 
     // Feedback save and find and findAll
     public void saveFeedback(Feedback feedback) {
+     //   feedback.setId();
         feedbackRepository.save(feedback);
     }
 
@@ -28,9 +29,9 @@ public class FeedbackService {
         return feedbackRepository.findAll();
     }
 
-    // public Optional<Feedback> getFeedbackByMessageContent(String message) {
-    //     return feedbackRepository.findByMessageContent(message);
-    // }
+    public List<Feedback> getFeedbackByMessageContent(String message) {
+        return feedbackRepository.findAll().stream().filter(feedback -> feedback.getMessage().contains(message)).toList();
+    }
 
     public Optional<Feedback> getFeedbackBySingleParent(boolean isSingleParent) {
         return feedbackRepository.findByIsSingleParent(isSingleParent);
