@@ -25,18 +25,27 @@ class App extends Component {
   }
 
   setName = (name) => {
-    console.log(name);
-    this.setState({ name: name });
+    try {
+        console.log(name);
+        this.setState({ name: name });
+    } catch (error) {
+        //nothing, just to stop buttom from being clicked when not loaded   
+
+    }
   };
 
   sendMessage = () => {
-    this.clientRef.sendMessage(
-      "/app/user-all",
-      JSON.stringify({
-        name: this.state.name,
-        message: this.state.typedMessage,
-      })
-    );
+    try {
+        this.clientRef.sendMessage(
+            "/app/user-all",
+            JSON.stringify({
+              name: this.state.name,
+              message: this.state.typedMessage,
+            })
+          );
+    } catch (error) {
+        //nothing, just to stop buttom from being clicked when not loaded   
+    }
   };
 
   displayMessages = () => {
