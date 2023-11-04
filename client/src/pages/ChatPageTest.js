@@ -77,6 +77,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Navbar/>
         <NameComponent setName={this.setName} />
         <div className="align-center">
           <h1>Welcome to Web Sockets</h1>

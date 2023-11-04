@@ -7,9 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import LaunchRouter from "./components/LaunchRouter";
 import SuggestionPage2 from "./pages/SuggestionPage2";
-import ChatPage from "./pages/ChatPage";
 import TrainingPage from "./pages/TrainingPage";
 import * as serviceWorker from "./ServiceWorker";
+import AppChat from "./pages/ChatPageTest";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 serviceWorker.unregister();
@@ -19,7 +19,7 @@ root.render(
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route exact path="/SuggestionPage" element={<SuggestionPage2 />} />
-        <Route exact path="/ChatPage" element={<ChatPage />} />
+        <Route exact path="/ChatPage" element={<AppChat />} />
         <Route exact path="/TrainingPage" element={<TrainingPage />} />
       </Routes>
     </Router>

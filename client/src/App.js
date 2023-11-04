@@ -2,7 +2,6 @@ import "./App.css";
 // import SuggestionPage from './pages/SuggestionPage';
 import SuggestionPage2 from "./pages/SuggestionPage2";
 import TrainingPage from "./pages/TrainingPage";
-import ChatPage from "./pages/ChatPage";
 import { Navbar } from "./components/Navbar.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "./components/NavBar.css"; // Import the CSS file for Navbar
@@ -16,8 +15,8 @@ function App() {
         <Navbar />
       </header>
       <body>
-        <AppChat />
-        {/* <SuggestionPage2 /> */}
+        {/* <AppChat /> */}
+        <SuggestionPage2 />
         {/* <TrainingPage /> */}
         {/* <ChatPage/> */}
       </body>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "../App.css";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 //Render the training page
 function TrainingPage() {
@@ -29,6 +30,7 @@ function TrainingPage() {
 
   return (
     <div>
+      <Navbar/>
       <div class="dropdown-container">
         {/* <MyComponent/> */}
         <Select Options={optionsData} />
