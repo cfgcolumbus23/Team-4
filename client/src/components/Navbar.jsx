@@ -145,7 +145,13 @@ export const Navbar = () => {
               Training
               {isProgressDropdownOpen && (
                 <div className="dropdown">
-                  <Link to="/your-progress-link">Your Progress</Link> {/* Replace with the actual link */}
+                 <a
+              onClick={() => {
+                navigate("/Your-Progress" );
+              }}
+            >
+              Your Progress
+            </a>
                 </div>
               )}
             </span>

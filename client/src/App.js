@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import TestRec from './pages/SubmitARec';
 import TestChatbox from './pages/ChatBox';
 import TestTraining from './pages/ChatBox';
+import SignIn from './components/SignIn';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/Training' element={<TestTraining/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/Your-Progress' element={<SignIn/>}/>
       </Routes>
       </BrowserRouter>
      
