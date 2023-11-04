@@ -13,6 +13,11 @@ function SelectOptionBox() {
         <Select options={options} />
       )
 
+    // Make a GET request to the endpoint
+    fetch("/courses/getCourse/0")
+      .then((response) => response.json()) // Assuming the response is JSON
+      .then(data => console.log(data));
+
     return (
     <div class="select-all-apply-menu">
         <MyComponent/>

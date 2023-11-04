@@ -14,6 +14,8 @@
   padding: 50px;
   justify-content: center;
   align-items: left;
+  border: 1px;
+  border: solid;
 }
 
 .left-align {
