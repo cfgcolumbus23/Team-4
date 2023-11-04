@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import "./SuggestionPage2.css";
+
 
 //Render the suggestion page
 function SuggestionPage2() {
@@ -175,7 +177,7 @@ function SuggestionPage2() {
             onChange={handleChangeFour}
           />
         </div>
-        <div class="submit">
+        <div class="submit" style={{ color: "#007bff" }}>
           <button onClick={handleSubmit}>Submit</button>
         </div>
       </div>
