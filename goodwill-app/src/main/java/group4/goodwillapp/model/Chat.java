@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +16,14 @@ import lombok.Setter;
 public class Chat {
     @Id
     private long chatId;
+
+    @JsonProperty("timeSent")
     private LocalDateTime timeSent;
+
+    @JsonProperty("message")
     private String message;
+
+    @JsonProperty("senderName")
     private String senderName;
 
     public Chat(){}
