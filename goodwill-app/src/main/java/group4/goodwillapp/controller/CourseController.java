@@ -15,7 +15,7 @@ import group4.goodwillapp.service.MongoDBService;
 
 @RestController
 @RequestMapping("/courses")
-public class MongodbController {
+public class CourseController {
 
     @Autowired
     private MongoDBService mongoDBService;
@@ -26,9 +26,16 @@ public class MongodbController {
     }
 
     @GetMapping("/getCourse/{courseId}")
-    public ResponseEntity<Course> getCourse(@PathVariable Long courseId) {
+    public ResponseEntity<Course> getCourseById(@PathVariable Long courseId) {
         return mongoDBService.getCourseById(courseId)
                 .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+    @GetMapping("/getAllCourses")
+    public ResponseEntity<Course> getAllCourses(@PathVariable Long courseId) {
+        return null; // add funtionality
+    }
+
+    
 }
