@@ -23,10 +23,10 @@ export const Navbar = () => {
     return (
         <nav>
             <div className="navbar-container">
+                <ul>
                 <div className="logo">
                     <img src={CbusGoodwill} alt  = "Goodwill Logo"/>    
                 </div>
-                <ul>
                     <li>
                         <Link to="https://www.goodwillcolumbus.org/mission/">Mission</Link>
                     </li>
