@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
@@ -25,6 +26,9 @@ public class ChatLog {
 
     @JsonProperty("coachId")
     private long coachId;
+
+    @JsonIgnore
+    private long lastUsedChatId;
 
     public ChatLog(){}
 
