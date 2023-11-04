@@ -25,20 +25,36 @@ class NameComponent extends Component {
   }
 
   handleClickOpen = () => {
-    this.setState({ open: true });
+    try {
+      this.setState({ open: true });
+    } catch (error) {
+      //nothing, just to stop buttom from being clicked when not loaded
+    }
   };
 
   handleClose = () => {
-    this.setState({ open: false });
+    try {
+      this.setState({ open: false });
+    } catch (error) {
+      //nothing, just to stop buttom from being clicked when not loaded
+    }
   };
 
   save = () => {
-    this.setState({ open: false });
-    this.props.setName(this.state.name);
+    try {
+      this.setState({ open: false });
+      this.props.setName(this.state.name);
+    } catch (error) {
+      //nothing, just to stop buttom from being clicked when not loaded
+    }
   };
 
   setEnteredName = (event) => {
-    this.setState({ name: event.target.value });
+    try {
+      this.setState({ name: event.target.value });
+    } catch (error) {
+      //nothing, just to stop buttom from being clicked when not loaded
+    }
   };
 
   render() {

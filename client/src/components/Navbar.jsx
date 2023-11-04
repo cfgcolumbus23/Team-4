@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import SuggestionPage2 from "../pages/SuggestionPage2";
 import TrainingPage from "../pages/TrainingPage";
-import ChatPage from "../pages/ChatPage";
 
 export const Navbar = () => {
   let navigate = useNavigate();

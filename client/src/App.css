@@ -34,6 +34,7 @@
   height: 70px;
   width: 150px;
   padding: 20px;
+  margin-bottom: 150px;
 }
 
 .dropdown-container{
@@ -49,4 +50,22 @@
   position: absolute;
   bottom: 0;
 
+}
+
+.footer {
+    display: flex;
+    color: aliceblue;
+    font-weight: bold;
+    height: 90px; 
+    width: 100%; 
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+  background-color: rgba(29, 70, 170, 1); /* Set the background color to light blue */
 }

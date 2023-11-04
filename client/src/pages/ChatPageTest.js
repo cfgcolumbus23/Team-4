@@ -1,13 +1,15 @@
+import { Navbar } from "../components/Navbar.jsx";
+import "../components/NavBar.css"; // Import the CSS file for Navbar
 import React, { Component } from "react";
 import SockJsClient from "react-stomp";
-import "./App.css";
 import "../css/MessageStyle.css";
 import NameComponent from "../components/NameComponent";
 import { TextField } from "@mui/material";
 import { DialogActions } from "@mui/material";
 import { Button } from "@mui/material";
+import Footer from "../components/Footer";
 
-class AppChat extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,19 +19,32 @@ class AppChat extends Component {
     };
   }
 
+  componentDidMount() {
+    this.clientRef.connect();
+  }
+
   setName = (name) => {
-    console.log(name);
-    this.setState({ name: name });
+    try {
+      console.log(name);
+      this.setState({ name: name });
+    } catch (error) {
+      //nothing, just to stop buttom from being clicked when not loaded
+    }
   };
 
   sendMessage = () => {
-    this.clientRef.sendMessage(
-      "/app/user-all",
-      JSON.stringify({
-        name: this.state.name,
-        message: this.state.typedMessage,
-      })
-    );
+    try {
+      this.clientRef.sendMessage(
+        "/app/user-all",
+        JSON.stringify({
+          name: this.state.name,
+          message: this.state.typedMessage,
+        })
+      );
+      //   this.state.typedMessage = ""; *************** autoclear
+    } catch (error) {
+      //nothing, just to stop buttom from being clicked when not loaded
+    }
   };
 
   displayMessages = () => {
@@ -61,9 +76,10 @@ class AppChat extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <NameComponent setName={this.setName} />
         <div className="align-center">
-          <h1>Welcome to Web Sockets</h1>
+          <h2>Chat with a Coach!</h2>
           <br />
           <br />
         </div>
@@ -101,7 +117,7 @@ class AppChat extends Component {
         <br />
         <div className="align-center">{this.displayMessages()}</div>
         <SockJsClient
-          url="http://localhost:8088/websocket-chat/"
+          url="/ws/"
           topics={["/topic/user"]}
           onConnect={() => {
             console.log("connected");
@@ -119,9 +135,12 @@ class AppChat extends Component {
             this.clientRef = client;
           }}
         />
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     );
   }
 }
 
-export default AppChat;
+export default App;

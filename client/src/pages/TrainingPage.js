@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "../App.css";
 import axios from "axios";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 //Render the training page
 function TrainingPage() {
@@ -29,15 +31,19 @@ function TrainingPage() {
 
   return (
     <div>
+      <Navbar />
       <div class="dropdown-container">
         {/* <MyComponent/> */}
         <Select Options={optionsData} />
       </div>
       <div class="story-container">
         <p>
-          Perry who did ptionsData.title went from 20k dead end job to 70k it
+          Perry who did optionsData.title went from 20k dead end job to 70k it
           developer!!!
         </p>
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </div>
   );
