@@ -9,12 +9,7 @@ import LaunchRouter from "./components/LaunchRouter";
 import SuggestionPage2 from "./pages/SuggestionPage2";
 import ChatPage from "./pages/ChatPage";
 import TrainingPage from "./pages/TrainingPage";
-<<<<<<< HEAD
-import SignIn from './components/SignIn';
-
-=======
 import * as serviceWorker from "./ServiceWorker";
->>>>>>> 687d9a5ca3f2d5d8c2bc635c164c1d386a57e4c4
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 serviceWorker.unregister();
