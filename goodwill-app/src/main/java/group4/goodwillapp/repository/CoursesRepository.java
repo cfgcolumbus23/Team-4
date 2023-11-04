@@ -15,13 +15,4 @@ public interface CoursesRepository extends MongoRepository<Course, Long> {
     //Get Course
     Optional<Course> findByCourseId(Long courseId);
 
-
-    //Find ChatLog
-    Optional<ChatLog> findByChatLogId(Long chatLogId);
-
-    //Find Chat
-    Optional<Chat> findByChatId(Long chatId);
-
-    //Find Applicant
-    Optional<Applicant> findByApplicantId(Long applicantId);
 }

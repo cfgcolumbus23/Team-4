@@ -10,31 +10,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import group4.goodwillapp.model.Applicant;
 import group4.goodwillapp.model.Course;
 import group4.goodwillapp.service.MongoDBService;
 
 @RestController
-@RequestMapping("/courses")
-public class CourseController {
+@RequestMapping("/applicant")
+public class ApplicantController {
 
     @Autowired
     private MongoDBService mongoDBService;
 
-    @PostMapping("/saveCourse")
-    public void saveCourse(@RequestBody Course course) {
-        mongoDBService.saveCourse(course);
+    @PostMapping("/saveApplicant")
+    public void saveCourse(@RequestBody Applicant applicant) {
+        mongoDBService.saveApplicant(applicant);
     }
 
-    @GetMapping("/getCourse/{courseId}")
-    public ResponseEntity<Course> getCourseById(@PathVariable Long courseId) {
-        return mongoDBService.getCourseById(courseId)
-                .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
+    @GetMapping("/getApplicant/{appId}")
+    public ResponseEntity<Course> getApplicantById(@PathVariable Long applicantId) {
+        return mongoDBService.getApplicantById(applicantId)
+                .map(applicant -> new ResponseEntity<>(applicant, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("/getAllCourses")
+    @GetMapping("/getAllApplicants")
     public ResponseEntity<Course> getAllCourses(@PathVariable Long courseId) {
-        return null; // add funtionality
+        return mongoDBService.getCourseById(courseId)
+                .map(course -> new ResponseEntity<>(course, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     
