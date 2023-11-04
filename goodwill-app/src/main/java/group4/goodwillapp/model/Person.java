@@ -1,16 +1,28 @@
 package group4.goodwillapp.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 public class Person {
-    private String name;
-    private String email;
-    private String phoneNum;
-    private int age;
-    private String password;
+
+  @JsonProperty("name")
+  private String name;
+
+  @JsonProperty("email")
+  private String email;
+
+  @JsonProperty("phoneNum")
+  private String phoneNum;
+
+  @JsonProperty("age")
+  private int age;
+
+  @JsonProperty("password")
+  private String password;
 
   public Person(){}
 

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +16,14 @@ import lombok.Setter;
 public class ChatLog {
     @Id
     private long chatLogId;
+
+    @JsonProperty("chats")
     private ArrayList<Chat> chats;
+
+    @JsonProperty("applicantId")
     private long applicantId;
+
+    @JsonProperty("coachId")
     private long coachId;
 
     public ChatLog(){}

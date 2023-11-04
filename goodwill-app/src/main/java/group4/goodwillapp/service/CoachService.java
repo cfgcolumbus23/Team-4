@@ -15,8 +15,12 @@ public class CoachService {
     @Autowired
     private CoachRepository coachRepository;
 
+    @Autowired
+    private IdCounterService idCounterService;
+
     // Coach save and find and findAll
     public void saveCoach(Coach coach) {
+        coach.setCoachId(idCounterService.getIdCounterNumByCollection("coaches"));
         coachRepository.save(coach);
     }
 

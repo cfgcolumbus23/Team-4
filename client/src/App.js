@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import SuggestionPage from './pages/SuggestionPage';
+import SuggestionPage2 from "./pages/SuggestionPage2";
+import TrainingPage from "./pages/TrainingPage";
+import ChatPage from "./pages/ChatPage";
+import { Navbar } from "./components/Navbar.jsx";
+import { BrowserRouter } from "react-router-dom";
+import "./components/NavBar.css"; // Import the CSS file for Navbar
+import logo from "./logo.svg";
 
 function App() {
   return (
-    <div className="GoodWi">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <Navbar />
       </header>
+      <body>
+        <SuggestionPage2 />
+        {/* <TrainingPage /> */}
+        {/* <ChatPage/> */}
+      </body>
     </div>
   );
 }

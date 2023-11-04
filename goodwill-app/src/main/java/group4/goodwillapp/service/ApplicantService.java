@@ -15,8 +15,12 @@ public class ApplicantService {
     @Autowired
     private ApplicantRepository applicantRepository;
 
+    @Autowired
+    private IdCounterService idCounterService;
+
     // Applicant save and find and findAll
     public void saveApplicant(Applicant applicant) {
+        applicant.setApplicantId(idCounterService.getIdCounterNumByCollection("applicants"));
         applicantRepository.save(applicant);
     }
 
