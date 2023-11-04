@@ -23,7 +23,7 @@ root.render(
         <Route exact path="/SuggestionPage" element={<SuggestionPage2 />} />
         <Route exact path="/ChatPage" element={<AppChat />} />
         <Route exact path="/TrainingPage" element={<TrainingPage />} />
-        <Route exact path="/Your-Progress" element={<SignIn/>} />
+        <Route exact path="/Your-Progress" element={<SignIn />} />
 
       </Routes>
     </Router>

@@ -9,7 +9,6 @@ function App() {
       <header>
       </header>
       <body>
-        {/* <AppChat /> */}
         <SuggestionPage2 />
         {/* <TrainingPage /> */}
         {/* <ChatPage/> */}
