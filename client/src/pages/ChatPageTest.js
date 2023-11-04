@@ -1,38 +1,13 @@
-import "./App.css";
-import SuggestionPage2 from "./pages/SuggestionPage2";
-import TrainingPage from "./pages/TrainingPage";
-import ChatPage from "./pages/ChatPage";
-import { Navbar } from "./components/Navbar.jsx";
-import { BrowserRouter } from "react-router-dom";
-import "./components/NavBar.css"; // Import the CSS file for Navbar
-//import ProgressBar from "./components/ProgressBar.jsx"; // Import the ProgressBar component
-import logo from "./logo.svg";
-import AppChat from "./pages/ChatPageTest";
 import React, { Component } from "react";
 import SockJsClient from "react-stomp";
 import "./App.css";
-import "./css/MessageStyle.css";
-import NameComponent from "./components/NameComponent";
+import "../css/MessageStyle.css";
+import NameComponent from "../components/NameComponent";
 import { TextField } from "@mui/material";
 import { DialogActions } from "@mui/material";
 import { Button } from "@mui/material";
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <div>
-      <header>
-        <Navbar />
-      </header>
-      <body>
-        <SuggestionPage2 />
-        { <TrainingPage /> }
-        {<ChatPage/>}
-      </body>
-    </div>
-  );
-=======
-class App extends Component {
+class AppChat extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,10 +15,6 @@ class App extends Component {
       typedMessage: "",
       name: "",
     };
-  }
-
-  componentDidMount() {
-    this.clientRef.connect();
   }
 
   setName = (name) => {
@@ -130,7 +101,7 @@ class App extends Component {
         <br />
         <div className="align-center">{this.displayMessages()}</div>
         <SockJsClient
-          url="/ws/"
+          url="http://localhost:8088/websocket-chat/"
           topics={["/topic/user"]}
           onConnect={() => {
             console.log("connected");
@@ -151,7 +122,6 @@ class App extends Component {
       </div>
     );
   }
->>>>>>> 687d9a5ca3f2d5d8c2bc635c164c1d386a57e4c4
 }
 
-export default App;
+export default AppChat;
