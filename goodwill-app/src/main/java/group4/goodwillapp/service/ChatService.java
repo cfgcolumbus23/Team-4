@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import group4.goodwillapp.model.Chat;
 import group4.goodwillapp.repository.ChatRepository;
 
+@Service
 public class ChatService {
 
     @Autowired

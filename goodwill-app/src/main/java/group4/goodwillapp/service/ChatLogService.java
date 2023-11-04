@@ -3,11 +3,13 @@ package group4.goodwillapp.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import group4.goodwillapp.model.Chat;
 import group4.goodwillapp.model.ChatLog;
 import group4.goodwillapp.repository.ChatLogRepository;
 
+@Service
 public class ChatLogService {
 
     @Autowired
