@@ -8,7 +8,7 @@ import React from "react";
 function TrainingPage() {
 
   return (
-    <div className="suggestion-box-container">
+    <div className="chat-box-container">
         <TextBox isRequired="Enter Chat"/>
     </div>
   );

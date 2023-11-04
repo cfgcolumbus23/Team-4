@@ -26,24 +26,25 @@ public class ApplicantController {
 
     @PostMapping("/saveApplicant")
     public void saveCourse(@RequestBody Applicant applicant) {
-        mongoDBService.saveApplicant(applicant);
+    mongoDBService.saveApplicant(applicant);
     }
 
     @GetMapping("/getApplicant/{appId}")
-    public ResponseEntity<Applicant> getApplicantById(@PathVariable Long applicantId) {
-        return mongoDBService.getApplicantById(applicantId)
-                .map(applicant -> new ResponseEntity<>(applicant, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ResponseEntity<Applicant> getApplicantById(@PathVariable Long
+    applicantId) {
+    return mongoDBService.getApplicantById(applicantId)
+    .map(applicant -> new ResponseEntity<>(applicant, HttpStatus.OK))
+    .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/getAllApplicants")
     public ResponseEntity<List<Applicant>> getAllApplicants() {
-        try{
-            return new ResponseEntity<List<Applicant>>(mongoDBService.getAllApplicants(), HttpStatus.OK);
-        }catch(Exception e){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }  
+    try{
+    return new ResponseEntity<List<Applicant>>(mongoDBService.getAllApplicants(),
+    HttpStatus.OK);
+    }catch(Exception e){
+    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
     }
 
-    
 }
